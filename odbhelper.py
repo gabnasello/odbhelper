@@ -289,7 +289,7 @@ class OdbHelper:
             os.makedirs(directory_step)
 
 
-        for fram in self.frame:
+        for num, fram in enumerate(self.frame):
 
             print('Exporting variable ' + variable + ' at frame ' + '%d' % fram.incrementNumber + ' in .csv format  ...')
 
@@ -300,7 +300,7 @@ class OdbHelper:
 
             csvoutput = self.csvVariableStore(fo, info)
 
-            csvfilename = instname + '_' + region_name + '_' + variable + '_' + str(int(fram.frameValue)) + '.csv'
+            csvfilename = instname + '_' + region_name + '_' + variable + '_' + '%04d' % num + '.csv'
             csvfilepath = directory_step + '\\' + csvfilename
             with open(csvfilepath, 'wb') as writeFile:
                 writer = csv.writer(writeFile)
