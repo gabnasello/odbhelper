@@ -74,6 +74,7 @@ class OdbHelper:
         "S3": 5,
         "S3R": 5,
         "S3RS": 5,
+        "R3D3": 5,
         "CPE3": 5,
         "CPE3T": 5,
         # volumes
